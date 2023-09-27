@@ -13,6 +13,7 @@ return {
         require("dada.plugins.autocompletion"),
         require("dada.plugins.gitsigns"),
         require("dada.plugins.nvim_tree"),
+        require("dada.plugins.autopairs"),
 
 
         { 'folke/which-key.nvim',  opts = {} },
