@@ -11,6 +11,7 @@ local function my_on_attach(bufnr)
   -- my mappings
   vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts("Close Directory"))
   vim.keymap.set('n', 'l', api.node.open.edit, opts("Open Directory"))
+  vim.keymap.set('n', '<C-d>', api.tree.change_root_to_node, opts("Change Root To Node"))
 end
 
 return {
