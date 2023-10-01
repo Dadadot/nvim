@@ -1,5 +1,5 @@
 -- [[ Basic Keymaps ]]
-require("dada.modules.buff_kill")
+
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -22,8 +22,5 @@ vim.api.nvim_set_keymap('n', '<leader>f', ':NvimTreeToggle<CR>', { noremap = tru
 vim.keymap.set( 'n', '<S-l>', ':BufferLineCycleNext<CR>', { silent = true })
 vim.keymap.set( 'n', '<S-h>', ':BufferLineCyclePrev<CR>', { silent = true })
 
--- Format
 vim.api.nvim_set_keymap('n', '<S-f>', ':Format<CR>', { noremap = true, silent = true, desc = "Format"})
-
-vim.api.nvim_set_keymap('n', '<leader>c', ':lua buf_kill()<CR>', { noremap = true, silent = true, desc = "Close Buffer"})
-
+vim.api.nvim_set_keymap('n', '<leader>c', ':lua DadaFoos.buf_kill()<CR>', { noremap = true, silent = true, desc = "Close Buffer"})

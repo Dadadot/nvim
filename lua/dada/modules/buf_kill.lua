@@ -1,6 +1,5 @@
 -- this is straight up stolen from the lunarvim config
 -- https://www.lunarvim.org/
-
 local M = {}
 function M.buf_kill(kill_command, bufnr, force)
   kill_command = kill_command or "bd"

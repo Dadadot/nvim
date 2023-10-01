@@ -24,6 +24,15 @@ return {
   config = function()
     require("nvim-tree").setup {
       on_attach = my_on_attach,
+      view = {
+        centralize_selection = true,
+        number = true,
+        relativenumber = true
+      },
+      update_focused_file = {
+        enable = true,
+        update_root = true
+      }
     }
   end,
 }

@@ -6,6 +6,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+_G.DadaFoos = require("dada.modules.DadaFoos")
 -- Load Plugins
 require("dada.vim_settings")
 require("dada.lazy")
