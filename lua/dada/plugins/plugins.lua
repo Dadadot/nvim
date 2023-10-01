@@ -9,6 +9,8 @@ return {
         -- Detect tabstop and shiftwidth automatically
         'tpope/vim-sleuth',
 
+        require("dada.plugins.transparent"),
+        require("dada.plugins.bufferline"),
         require("dada.plugins.lsp"),
         require("dada.plugins.autocompletion"),
         require("dada.plugins.gitsigns"),

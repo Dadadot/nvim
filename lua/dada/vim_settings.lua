@@ -41,3 +41,7 @@ vim.o.termguicolors = true
 
 -- enable relative numbers
 vim.o.relativenumber = true
+
+-- some options the nvim-tree suggest
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
