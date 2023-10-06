@@ -16,11 +16,14 @@ vim.api.nvim_set_keymap('n', '<C-k>', ':resize -2<CR>', { noremap = true, silent
 vim.api.nvim_set_keymap('n', '<C-j>', ':resize +2<CR>', { noremap = true, silent = true })
 
 -- costum keymaps
-vim.api.nvim_set_keymap('n', '<leader>f', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = "Toggle NvimTree"})
+vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = "Toggle NvimTree"})
 
 -- bufferline
 vim.keymap.set( 'n', '<S-l>', ':BufferLineCycleNext<CR>', { silent = true })
 vim.keymap.set( 'n', '<S-h>', ':BufferLineCyclePrev<CR>', { silent = true })
 
-vim.api.nvim_set_keymap('n', '<S-f>', ':Format<CR>', { noremap = true, silent = true, desc = "Format"})
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Format<CR>', { noremap = true, silent = true, desc = "Format File"})
+vim.api.nvim_set_keymap('n', '<leader>fl', ':<C-U>s/\\s\\+/ /g<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>fs', ':s/\\s\\+/ /g<CR>', { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<leader>c', ':lua DadaFoos.buf_kill()<CR>', { noremap = true, silent = true, desc = "Close Buffer"})

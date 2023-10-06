@@ -48,3 +48,11 @@ vim.o.relativenumber = true
 -- some options the nvim-tree suggest
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+
+-- stuff
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.scrolloff = 8
