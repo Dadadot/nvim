@@ -5,6 +5,9 @@
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
+vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true })
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -22,8 +25,13 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = tru
 vim.keymap.set( 'n', '<S-l>', ':BufferLineCycleNext<CR>', { silent = true })
 vim.keymap.set( 'n', '<S-h>', ':BufferLineCyclePrev<CR>', { silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>bp', ':b #<CR>', { noremap = true, silent = true, desc = "Previous Buffer" })
+
 vim.api.nvim_set_keymap('n', '<leader>ff', ':Format<CR>', { noremap = true, silent = true, desc = "Format File"})
 vim.api.nvim_set_keymap('n', '<leader>fl', ':<C-U>s/\\s\\+/ /g<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>fs', ':s/\\s\\+/ /g<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>c', ':lua DadaFoos.buf_kill()<CR>', { noremap = true, silent = true, desc = "Close Buffer"})
+
+vim.api.nvim_set_keymap('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, silent = true, desc = "Restart Lsp"})
+vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], {noremap = true, desc = "Exit insert mode in terminal"})

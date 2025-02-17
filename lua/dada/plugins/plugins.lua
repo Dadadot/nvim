@@ -8,6 +8,7 @@ return {
 
         -- Detect tabstop and shiftwidth automatically
         'tpope/vim-sleuth',
+        'ambv/black',
 
         require("dada.plugins.transparent"),
         require("dada.plugins.bufferline"),

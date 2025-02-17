@@ -2,7 +2,23 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 --
-vim.o.autochdir = true
+-- vim.o.autochdir = true
+-- Define the command
+vim.api.nvim_create_user_command('Gdformat', function()
+    -- Get the current buffer's file path
+    local filepath = vim.fn.expand('%:p')
+
+    -- Save the current buffer to ensure the file is up-to-date
+    vim.cmd('write')
+
+    -- Run gdformat on the file
+    local command = 'gdformat ' .. vim.fn.shellescape(filepath)
+    vim.fn.system(command)
+
+    -- Reload the buffer to reflect the changes
+    vim.cmd('edit!')
+end, {})
+
 
 -- Set highlight on search
 vim.o.hlsearch = false

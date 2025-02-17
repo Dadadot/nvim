@@ -26,8 +26,10 @@ return {
       on_attach = my_on_attach,
       view = {
         centralize_selection = true,
-        number = true,
-        relativenumber = true
+          number = true,
+        relativenumber = true,
+        width = 40,
+        side = 'left',
       },
       update_focused_file = {
         enable = true,

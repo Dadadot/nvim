@@ -2,6 +2,10 @@
 -- See `:help mapleader`
 --
 
+vim.cmd [[
+  command! BufSort BufferLineSortByDirectory
+]]
+
 --  NOTE: Leader definition must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -29,6 +33,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    path_display = { "truncate"},
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -49,7 +54,7 @@ vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers,
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require(
-  'telescope.themes').get_dropdown {
+    'telescope.themes').get_dropdown {
     winblend = 10,
     previewer = false,
   })
@@ -74,8 +79,19 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume,
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx',
-    'javascript', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = {
+    'c',
+    'cpp',
+    'go',
+    'lua',
+    'python',
+    'rust',
+    'tsx',
+    'javascript',
+    'typescript',
+    'vimdoc',
+    'vim'
+  },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -207,7 +223,10 @@ end
 local servers = {
   clangd = {},
   -- gopls = {},
-  pyright = {},
+  pyright = {
+    {
+    }
+  },
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },

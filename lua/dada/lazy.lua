@@ -17,3 +17,5 @@ vim.opt.rtp:prepend(lazypath)
 local options = require("dada.plugins.plugins")
 
 require('lazy').setup(options)
+require'lspconfig'.gdscript.setup{}
+
